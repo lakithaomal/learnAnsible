@@ -1,4 +1,4 @@
-# Basics of Ansible
+# Ansible Basics 
 Ansibles main goals is automating cluster management. Lets take a simple expample on working on a set of interconnected servers. 
 - For a powerdown
   - Power down web servers
