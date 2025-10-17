@@ -61,7 +61,19 @@ $ ansible-playbook playbook.yml
 - Change Persisting for multiple terminals/sessions:
 At `/opt/web-playbooks/ansible.cfg` add the line  `gathering = explicit playbook.yml`
 
-
+To check on the current configurations you can try out the following commands. 
+  
+- `ansible - config list`: This command lists all possible configuration settings that Ansible recognizes, along with their: 
+  - Current Value: The value Ansible is actually using (which might come from the default, an environment variable, or a config file).
+  - Default Value: The hardcoded default value for that setting.
+  - Source: Where the current value came from (e.g., "default," "ansible.cfg," or an environment variable).
+  - Description: A brief explanation of what the setting does.
+- `ansible - config view`: active ansible.cfg configuration file that Ansible is currently using, in its raw file format.
+  - Content: Only shows the settings defined in the specific ansible.cfg file.
+  - Format: The raw text of the configuration file, typically organized by sections (e.g., [defaults], [privilege_escalation]).
+- `ansible - config dump`:This command outputs all active, non-default configuration settings that Ansible is currently using, presenting them in a structured .ini format.
+  - Content: Lists only settings whose current value differs from the default. It excludes any options that are still at their factory setting.
+  - Format: Presents the output as a clean, complete ansible.cfg file.
 
 
 
